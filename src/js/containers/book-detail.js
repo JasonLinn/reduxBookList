@@ -1,11 +1,27 @@
 
 import React, {Component } from 'react';
+import {connect} from 'react-redux';
 
-
-export default class BookDetail extends Component{
+class BookDetail extends Component{
     render(){
+        if(!this.props.book){ //在資料尚未傳好前，先顯示這段
+            return <div className="ui grid">Select a book to get started.</div>
+        }
         return(
-            <div>Book Detail!</div>
+            <div className="ui grid">
+                <h3 className="">Details for:</h3>
+                <div>Title:{this.props.book.title}</div>
+                <div>Pages:{this.props.book.pages}</div>
+            </div>
         )
     }
 };
+
+
+function mapStateToProps(state){
+    return{
+        book:state.activeBook
+    }
+}
+
+export default connect(mapStateToProps)(BookDetail);

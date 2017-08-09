@@ -1,5 +1,5 @@
 //State argument is not application state,only the state
-//this reducer is
+//this reducer is responsible for
 export default function (state = null,action){
     switch (action.type) {
         case 'BOOK_SELECTED':
@@ -8,3 +8,6 @@ export default function (state = null,action){
     }
     return state;
 };
+
+
+

@@ -1,5 +1,14 @@
 body{
     background-color:#ccc;
     display: flex;
-    margin: 10px;
+    // margin: 10px;
+}
+.container{
+    display: flex;
+}
+li{
+    cursor: pointer;
+    &:hover{
+        background-color:skyblue;
+    }
 }
